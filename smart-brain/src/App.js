@@ -10,10 +10,6 @@ import Signin from "./Components/Signin/Signin";
 import Register from "./Components/Register/Register";
 // import Clarifai from "clarifai";
 
-// const app = new Clarifai.App({
-//   apiKey: "bfb4890b09f24ca39757ae2741ff7cc7",
-// });
-
 const MODEL_ID = "face-detection";
 const MODEL_VERSION_ID = "6dc7e46bc9124c5c8824be4822abe105";
 
@@ -118,8 +114,6 @@ class App extends Component {
 
   onButtonSubmit = (event) => {
     this.setState({ imageUrl: this.state.input });
-
-    // app.models.predict("face-detection", this.state.input)
     fetch(
       "https://api.clarifai.com/v2/models/" +
         MODEL_ID +
